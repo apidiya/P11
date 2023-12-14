@@ -1,8 +1,13 @@
-<!-- structure classique du footer -->
-<footer>
-    <p>Mon thème WordPress</p>
-</footer>
 <?php wp_footer(); ?>
-</body>
-</html>
-<!-- fin du footer -->
+
+<footer>
+    <nav class="footer-nav">
+      <?php
+        wp_nav_menu( array(
+          'theme_location' => 'footer-menu', 
+          'container' => false, // pas de conteneur div
+          'menu_class' => 'footer-menu', // classe CSS pour personnaliser
+        ) );
+      ?>
+    </nav>
+</footer>

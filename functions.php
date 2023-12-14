@@ -9,8 +9,8 @@ add_action( 'wp_enqueue_scripts', 'enqueue_custom_styles' );
 function register_menus() {
     register_nav_menus(
         array(
-            'header' => 'mon header',
-            'footer' => 'mon footer'
+            'header-menu' => 'menu header',
+            'footer-menu' => 'menu footer'
         )
     );
 }

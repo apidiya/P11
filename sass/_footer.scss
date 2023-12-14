@@ -1,0 +1,33 @@
+footer {
+  font: {
+    size: 16px;
+    family: 'space_monoregular', monospace;
+}
+  border-top: 1px solid black;
+  padding-top: 1%;
+  gap: 2%;
+}
+
+.footer-nav {
+  display: flex; 
+  justify-content: center;
+}
+
+.footer-menu {
+  list-style: none; /* Enlève les puces */
+  display: flex; 
+  margin: 0; 
+  padding: 0; 
+  align-items: center; 
+}
+
+.footer-menu li {
+  padding: 0 40px; /* Espacement entre les éléments de menu */
+}
+
+.footer-menu li a {
+  text-decoration: none; /* Enlève le soulignement des liens */
+  color: #000; /* Couleur des liens */
+  text-transform: uppercase;
+}
+

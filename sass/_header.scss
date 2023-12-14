@@ -1,0 +1,40 @@
+.header {
+    font: {
+        size: 16px;
+        family: 'space_monoregular', monospace;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; // Assurez-vous que le header prend toute la largeur
+  }
+  
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-inline: 145px;
+  }
+  
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; // Alignez le menu de navigation à la fin (côté droit)
+    width: 100%; // Prend toute la largeur pour pousser le logo à gauche et le menu à droite
+  }
+  
+.header-menu {
+    list-style: none;
+    display: flex; // Affiche les éléments de menu en ligne
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end; // Optionnel, si vous avez besoin de pousser les éléments du menu vers la droite
+  }
+  
+.header-menu li a {
+    text-decoration: none;
+    color: #000; 
+    padding: 0 15px; 
+    text-transform: uppercase;
+  }
