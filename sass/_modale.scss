@@ -25,11 +25,73 @@
     justify-content: center;
     align-items: center;
     max-width: 512px;
-    border: 2px solid black;
+    border: 5px solid black;
     background: white;
     margin-top: 16px;
     padding: 8px 40px 40px 40px;
     height: auto;
-    border-radius: 8px;
     overflow: hidden;
+}
+
+// Style CF7
+/* Styliser le conteneur de formulaire CF7 */
+.wpcf7 {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+/* Styliser les labels */
+.wpcf7 label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Styliser les champs de saisie et de texte */
+.form-control {
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; /* Espace entre les champs */
+    border: 1px solid #ccc; /* Bordure des champs */
+    box-sizing: border-box; /* Pour s'assurer que le padding ne change pas la largeur */
+}
+
+/* Styliser le champ textarea séparément pour contrôler la hauteur */
+.form-control-textarea {
+    resize: none; /* Empêche l'utilisateur de redimensionner */
+    border-radius: 8px;
+    height: 190px; /* Ajustez la hauteur selon vos besoins */
+}
+
+/* Styliser le bouton d'envoi */
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #D8D8D8;
+
+    ; /* Couleur de fond du bouton */
+    color: #000000; /* Couleur du texte du bouton */
+    border: none;
+    margin-top: 10px; /* Espace avant le bouton */
+    cursor: pointer;
+}
+
+/* Ajouter des styles pour les états hover et focus des boutons et champs */
+.form-control:hover,
+.form-control:focus,
+.submit-button:hover {
+    border-color: #666; /* Couleur de bordure lors du survol ou du focus */
+}
+
+.submit-button:focus {
+    outline: none;
+    background-color: #333; /* Couleur de fond du bouton lors du focus */
 }
