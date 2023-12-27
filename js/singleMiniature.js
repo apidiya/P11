@@ -1,26 +1,40 @@
 console.log("singleMiniature.js est lancé");
 
-$(document).ready(function() {
-    const miniPicture = $('#miniPicture');
+window.addEventListener("DOMContentLoaded", () => {
 
-    $('.arrow-left, .arrow-right').hover(
-        function() {
-            miniPicture.css({
-                visibility: 'visible',
-                opacity: 1
-            }).html(`<a href="${$(this).data('target-url')}">
-                        <img src="${$(this).data('thumbnail-url')}" alt="${$(this).hasClass('arrow-left') ? 'Photo précédente' : 'Photo suivante'}">
-                    </a>`);
-        },
-        function() {
-            miniPicture.css({
-                visibility: 'hidden',
-                opacity: 0
-            });
+// Single-page : Affichage de la photo miniature au survol des flèche
+
+  // Flèche gauche
+  const arrowLeft = document.getElementById("arrow-left");
+  //Flèche droite
+  const arrowRight = document.getElementById("arrow-right");
+  //Image gauche
+  const previousImage = document.getElementById("previous-image");
+  //Image droite
+  const nextImage = document.getElementById("next-image");
+
+
+  if( previousImage != null && arrowLeft != null) {
+  arrowLeft.addEventListener(
+    'mouseenter',
+    function(event) {
+        previousImage.style.visibility = "visible";
+        if ( nextImage != null) {
+          nextImage.style.visibility = "hidden";
         }
-    );
+      }
+    )
+  }
 
-    $('.arrow-left, .arrow-right').click(function() {
-        window.location.href = $(this).data('target-url');
-    });
-});
+  if( nextImage != null && arrowRight != null) {
+    arrowRight.addEventListener(
+      'mouseenter',
+      function(event) {
+        nextImage.style.visibility = "visible";
+        previousImage.style.visibility = "hidden";
+      }
+    )
+  }
+
+
+})

@@ -46,22 +46,51 @@
             <button id="boutonContact">Contact</button>
         </div> 
 
-        <div class="naviguationPhotos">
-        <!-- affiche la miniature  -->
-            <div class="miniPicture" id="miniPicture">
-                <!-- La miniature sera chargée ici par JavaScript -->
+        <div class="interaction-photo__navigation">
+            <?php
+                $prevPost = get_previous_post();
+                $nextPost = get_next_post();
+            ?>
+            <div class="arrows">
+                <?php if (!empty($prevPost)) :                        
+                        $prevLink = get_permalink($prevPost); ?>
+                        <a id="arrow-left" href="<?= $prevLink; ?>">
+                            <img class="arrow arrow-gauche" src="<?= get_template_directory_uri(); ?>/assets/images/left.png" alt="Flèche pointant vers la gauche" />
+                        </a>
+                        <?php endif;
+                        if (!empty($nextPost)) :
+                            $nextLink = get_permalink($nextPost); ?>
+                            <a href="<?= $nextLink; ?>">
+                                <img id="arrow-right" class="arrow arrow-droite" src="<?= get_template_directory_uri(); ?>/assets/images/right.png" alt="Flèche pointant vers la droite" />
+                            </a>
+                <?php endif; ?>
+            </div>
+            
+            <div class="div-preview">
+            <div class="preview">
+                <?php if (!empty($prevPost)) :
+                        $prevThumbnail = get_field( "photo" , $prevPost->ID );
+                        $prevLink = get_permalink($prevPost); ?>
+                        <a href="<?= $prevLink; ?>">
+                        <img id="previous-image" class="previous-image" src="<?php echo $prevThumbnail["sizes"]["thumbnail"]; ?>" alt="Prévisualisation image précédente">
+                        </a>
+                <?php endif; ?>
             </div>
 
-            <div class="naviguationArrow">
-            <?php if (!empty($previousPost)) : ?>
-                <img class="arrow arrow-left" src="<?php echo get_theme_file_uri() . '/assets/images/left.png'; ?>" alt="Photo précédente" data-thumbnail-url="<?php echo $previousThumbnailURL; ?>" data-target-url="<?php echo esc_url(get_permalink($previousPost->ID)); ?>">
-            <?php endif; ?>
-
-            <?php if (!empty($nextPost)) : ?>
-                <img class="arrow arrow-right" src="<?php echo get_theme_file_uri() . '/assets/images/right.png'; ?>" alt="Photo suivante" data-thumbnail-url="<?php echo $nextThumbnailURL; ?>" data-target-url="<?php echo esc_url(get_permalink($nextPost->ID)); ?>">
-            <?php endif; ?>
+            <div class="preview">
+                <?php if (!empty($nextPost)) :
+                            $nextThumbnail = get_field( "photo" , $nextPost->ID );                  
+                            $nextLink = get_permalink($nextPost);                            
+                            ?>
+                            <a href="<?= $nextLink; ?>">
+                            <img id="next-image" class="next-image" src="<?php echo $nextThumbnail["sizes"]["thumbnail"]; ?>" alt="Prévisualisation image suivante">
+                            </a>
+                <?php endif ?>
+            </div>
             </div>
         </div>
+
+
     </section>
 
     <!-- section autres photos -->

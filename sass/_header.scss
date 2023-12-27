@@ -11,10 +11,12 @@
   
 .header_container {
     display: flex;
+    margin:0 auto;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding-inline: 145px;
+    max-width: 1200px;
+    padding: 30px 0;
   }
   
 .nav-links-container {
