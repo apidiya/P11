@@ -1,6 +1,5 @@
 /** section détail photo **/
 .main-content {
-  
     width: 100%;
     height: 843px;
   }
@@ -47,3 +46,64 @@
     width: 100%;
     object-fit: cover;
   }
+
+  // section contact et carrousel
+  .contact-carrousel {
+    display: flex;
+    height: 118px;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+  }
+  .contact-btn {
+    display: flex;
+    align-items: center;
+  }
+  .contact-btn h4{
+    font-family: PoppinsRegular;
+    font-size: 14px;
+    font-weight: 300;
+    }
+  #boutonContact {
+    margin-left: 80px;
+    padding: 15px 90px;
+    border: none;
+    border-left: 4px solid transparent;
+    background-color: #D8D8D8;
+    cursor: pointer;
+  }
+  #boutonContact:hover {
+    border: 4px solid black;
+  }
+
+// partie carrousel miniature
+  .photo-navigation {
+    display: flex;
+    flex-direction: column;
+  }
+  .image {
+    // display: none; /* Cache la div par défaut */
+    height: 80px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .image img {
+    max-height: 80px;
+    width: auto;
+    margin-top: 10px;
+  }
+  .arrows {
+    margin-top: 5px;
+    display: flex;
+    gap: 15%;
+  }
+  .arrows img {
+    max-height: 20px;
+  }
+  #right-arrow,
+  #left-arrow {
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+// section autres photos

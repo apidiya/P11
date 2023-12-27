@@ -30,6 +30,9 @@ function script_JS_Custom() {
 
     // Gestion de la Modale (script jQuery)
     wp_enqueue_script('modale', get_stylesheet_directory_uri() . '/js/modale.js', array('jquery'), '1.0.0', true);
+
+    // Affichage des images miniature (script JQuery)
+    wp_enqueue_script('singleMiniature', get_stylesheet_directory_uri() . '/js/singleMiniature.js', array('jquery'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'script_JS_Custom');
 
