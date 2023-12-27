@@ -77,33 +77,82 @@
   }
 
 // partie carrousel miniature
-  .photo-navigation {
+  .naviguationPhotos {
+    width: 50%;
+    height: 118px;
     display: flex;
     flex-direction: column;
-  }
-  .image {
-    // display: none; /* Cache la div par défaut */
-    height: 80px;
-    width: 100%;
-    margin-top: 10px;
-  }
-  .image img {
-    max-height: 80px;
-    width: auto;
-    margin-top: 10px;
-  }
-  .arrows {
-    margin-top: 5px;
-    display: flex;
-    gap: 15%;
-  }
-  .arrows img {
-    max-height: 20px;
-  }
-  #right-arrow,
-  #left-arrow {
-    cursor: pointer;
-    margin-right: 10px;
+    align-items: flex-end;
+    @media screen and (max-width: 820px) {
+      display:none;
+    }
   }
 
-// section autres photos
+  .naviguationArrow {
+    width: 81px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 10px;
+    height: 118px;
+  
+    .arrow {
+       width: 25px;
+       height: auto;
+  
+       background-size: cover;
+       background-position: center;
+       display: inline-block;
+  
+       &:hover + .miniPicture {
+         display: flex !important;
+       }
+  
+       .arrow-left {
+         top: 10px;
+         position: relative;
+      }
+      .arrow-right{
+        top: 10px;
+        position: relative;
+      }
+    }
+  }
+  
+  .miniPicture-content {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  
+  .miniPicture,
+  .miniPicture-left,
+  .miniPicture-right {
+    // visibility: hidden; // au lieu de display: none;
+    opacity: 1;
+    position: relative;
+    height: 71px;
+    width: 81px;
+    top: 8px;
+    transition: visibility 0,3s, opacity 0.3s linear; // Transition pour un effet de fondu
+  
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+    .arrow:hover + .miniPicture,
+    .arrow:hover + .miniPicture-left,
+    .arrow:hover + .miniPicture-right {
+      visibility: visible;
+      opacity: 1;
+    }
+  

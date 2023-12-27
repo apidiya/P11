@@ -39,51 +39,29 @@
         </div>
     </section>  
     
-    <!-- section contact et carrousel -->
+    <!-- section contact et carrousel miniature -->
     <section class="contact-carrousel">
         <div class="contact-btn">
             <h4>Cette photo vous intéresse ?</h4>
             <button id="boutonContact">Contact</button>
         </div> 
 
-        <?php
-        // initializing variables
-        $next_item = get_next_post();
-        $previous_item = get_previous_post();
-                
-        $next_image = get_the_post_thumbnail($next_item->ID);
-        $previous_image = get_the_post_thumbnail($previous_item->ID);
-                
-        $permalink_next = get_the_permalink($next_item->ID);
-        $permalink_prev = get_the_permalink($previous_item->ID);
-        ?>
-        
-        <div class="photo-navigation">
-            <div class="image">
-                <!-- La div où la miniature apparaîtra -->
+        <div class="naviguationPhotos">
+        <!-- affiche la miniature  -->
+            <div class="miniPicture" id="miniPicture">
+                <!-- La miniature sera chargée ici par JavaScript -->
             </div>
 
-            <div class="arrows">
-                <!-- left / previous -->
-                <div class="arrow-left" data-prev-image="<?php echo get_the_post_thumbnail_url($previous_item->ID); ?>">
-                    <?php if (!empty($previous_item)) : ?>
-                        <a href="<?php echo $permalink_prev; ?>">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/larr.svg' ?>" alt="fleche gauche">
-                        </a>
-                    <?php endif; ?>
-                </div>
+            <div class="naviguationArrow">
+            <?php if (!empty($previousPost)) : ?>
+                <img class="arrow arrow-left" src="<?php echo get_theme_file_uri() . '/assets/images/left.png'; ?>" alt="Photo précédente" data-thumbnail-url="<?php echo $previousThumbnailURL; ?>" data-target-url="<?php echo esc_url(get_permalink($previousPost->ID)); ?>">
+            <?php endif; ?>
 
-                <!-- right / next -->
-                <div class="arrow-right" data-next-image="<?php echo get_the_post_thumbnail_url($next_item->ID); ?>">
-                    <?php if (!empty($next_item)) : ?>
-                        <a href="<?php echo $permalink_next; ?>">
-                            <img id="right-arrow" src="<?php echo get_template_directory_uri() . '/assets/images/rarr.svg' ?>" alt="fleche droite">
-                        </a>
-                    <?php endif; ?>
-                </div>
+            <?php if (!empty($nextPost)) : ?>
+                <img class="arrow arrow-right" src="<?php echo get_theme_file_uri() . '/assets/images/right.png'; ?>" alt="Photo suivante" data-thumbnail-url="<?php echo $nextThumbnailURL; ?>" data-target-url="<?php echo esc_url(get_permalink($nextPost->ID)); ?>">
+            <?php endif; ?>
             </div>
         </div>
-        
     </section>
 
     <!-- section autres photos -->
