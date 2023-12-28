@@ -97,11 +97,17 @@
 }
 
 footer {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
   font-size: 16px;
   font-family: "space_monoregular", monospace;
   border-top: 1px solid black;
-  padding-top: 1%;
-  gap: 2%;
 }
 
 .footer-nav {
@@ -307,14 +313,13 @@ footer {
 #boutonContact {
   margin-left: 80px;
   padding: 15px 90px;
-  border: none;
-  border-left: 4px solid transparent;
+  border: 2px solid transparent;
   background-color: #D8D8D8;
   cursor: pointer;
 }
 
 #boutonContact:hover {
-  border: 4px solid black;
+  border: 2px solid black;
 }
 
 .interaction-photo {
@@ -348,4 +353,164 @@ footer {
 .interaction-photo__navigation .arrows {
   display: flex;
   justify-content: space-between;
+}
+
+.photo-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.suggested-photo-container h3 {
+  font-family: "space_monoregular";
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.suggested-photo {
+  width: 48%;
+  margin: 1%;
+}
+
+.suggested-photo img {
+  width: 100%;
+  height: 60vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.all-photos-btn {
+  display: flex;
+  justify-content: center;
+}
+
+#button-photos {
+  margin: 20px 0 40px;
+  padding: 15px 90px;
+  border: 2px solid transparent;
+  background-color: #D8D8D8;
+  cursor: pointer;
+}
+
+#button-photos:hover {
+  border: 2px solid black;
+}
+
+.overlay {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.overlay img {
+  max-width: 50px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.overlay .overlay-fullscreen {
+  display: flex;
+  justify-content: flex-end;
+}
+.overlay .overlay-single {
+  display: flex;
+  justify-content: center;
+}
+.overlay .overlay-text {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.overlay .overlay-title {
+  padding: 0;
+  margin: 0;
+  font-family: "poppinsregular";
+  font-size: 14px;
+  font-weight: 400;
+}
+.overlay .overlay-category {
+  padding: 0;
+  margin: 0;
+  font-family: "space_monoregular";
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.suggested-photo {
+  position: relative;
+}
+.suggested-photo:hover .overlay {
+  display: flex;
+}
+
+body {
+  margin: 0;
+}
+
+.hero {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero h1 {
+  font-family: "space_monobold_italic";
+  font-size: 96px;
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+}
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.filters {
+  padding: 40px 0;
+}
+.filters select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #B8BBC2;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-family: "PoppinsMedium";
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+.filters form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter1 {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.filter2 {
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
 }/*# sourceMappingURL=style.css.map */

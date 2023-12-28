@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+}
+
+.hero {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-family: "space_monobold_italic";
+        font-size: 96px;
+        color: white;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.filters {
+padding: 40px 0;
+
+select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #B8BBC2;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-family: "PoppinsMedium";
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 0 10px;
+    }
+}
+
+.filters form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter1 {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.filter2 {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+}

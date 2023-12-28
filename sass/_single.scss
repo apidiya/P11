@@ -72,13 +72,12 @@
   #boutonContact {
     margin-left: 80px;
     padding: 15px 90px;
-    border: none;
-    border-left: 4px solid transparent;
+    border: 2px solid transparent;
     background-color: #D8D8D8;
     cursor: pointer;
   }
   #boutonContact:hover {
-    border: 4px solid black;
+    border: 2px solid black;
   }
 
 // partie carrousel miniature
@@ -116,3 +115,42 @@
   }
 }
 
+// section photos apparentées
+.photo-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.suggested-photo-container h3{
+  font-family: "space_monoregular";
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.suggested-photo {
+  width: 48%;
+  margin: 1%;
+}
+.suggested-photo img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+
+// Toutes les photos
+.all-photos-btn {
+  display: flex;
+  justify-content: center;
+}
+
+#button-photos {
+  margin : 20px 0 40px;
+  padding: 15px 90px;
+  border: 2px solid transparent;
+  background-color: #D8D8D8;
+  cursor: pointer;
+}
+#button-photos:hover {
+  border: 2px solid black;
+}
