@@ -65,11 +65,14 @@
     align-items: center;
   }
   .contact-btn h4{
-    font-family: PoppinsRegular;
+    font-family: "PoppinsRegular";
     font-size: 14px;
     font-weight: 300;
     }
   #boutonContact {
+    font-family: "space_monoregular";
+    font-size: 12px;
+    font-weight: 400;
     margin-left: 80px;
     padding: 15px 90px;
     border: 2px solid transparent;
@@ -145,6 +148,9 @@
 }
 
 #button-photos {
+  font-family: "space_monoregular";
+  font-size: 12px;
+  font-weight: 400;
   margin : 20px 0 40px;
   padding: 15px 90px;
   border: 2px solid transparent;

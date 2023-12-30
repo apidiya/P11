@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+
+<!-- Hero -->
 <section class="hero">
 <?php
                 // arguments de la requête
@@ -29,6 +31,7 @@
 <h1>PHOTOGRAPHE EVENT</h1>
 </section>
 
+<!-- Liste des photos -->
 <div class="page-container">
                 <div class="filters">
                     <form action="" method="get"> 
@@ -98,4 +101,11 @@
          </div>
 </div>
 
+<!-- bouton "Charger plus" -->
+<div class="loadmore-btn-container">
+        <button type="button" id="load-more-button">Charger plus</button>
+</div>
+
+
+<!-- footer -->
 <?php get_footer(); ?>

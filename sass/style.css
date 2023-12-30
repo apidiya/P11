@@ -224,11 +224,6 @@ footer {
   border-color: #666; /* Couleur de bordure lors du survol ou du focus */
 }
 
-.submit-button:focus {
-  outline: none;
-  background-color: #333; /* Couleur de fond du bouton lors du focus */
-}
-
 /** section détail photo **/
 .page-container {
   margin: 0 auto;
@@ -305,12 +300,15 @@ footer {
 }
 
 .contact-btn h4 {
-  font-family: PoppinsRegular;
+  font-family: "PoppinsRegular";
   font-size: 14px;
   font-weight: 300;
 }
 
 #boutonContact {
+  font-family: "space_monoregular";
+  font-size: 12px;
+  font-weight: 400;
   margin-left: 80px;
   padding: 15px 90px;
   border: 2px solid transparent;
@@ -385,6 +383,9 @@ footer {
 }
 
 #button-photos {
+  font-family: "space_monoregular";
+  font-size: 12px;
+  font-weight: 400;
   margin: 20px 0 40px;
   padding: 15px 90px;
   border: 2px solid transparent;
@@ -465,11 +466,22 @@ body {
   align-items: center;
 }
 .hero h1 {
-  font-family: "space_monobold_italic";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Space Mono", sans-serif;
   font-size: 96px;
-  color: white;
+  font-weight: 700;
+  font-style: italic;
   text-transform: uppercase;
-  position: relative;
+  /* prevent line breaks */
+  white-space: nowrap;
+  -webkit-text-stroke: 2px #fff;
+  color: transparent;
 }
 .hero img {
   position: absolute;
@@ -513,4 +525,24 @@ body {
   width: 25%;
   display: flex;
   justify-content: flex-end;
+}
+
+.loadmore-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+#load-more-button {
+  font-family: "space_monoregular";
+  font-size: 12px;
+  font-weight: 400;
+  margin: 20px 0 40px;
+  padding: 15px 90px;
+  border: 2px solid transparent;
+  background-color: #D8D8D8;
+  cursor: pointer;
+}
+
+#load-more-button:hover {
+  border: 2px solid black;
 }/*# sourceMappingURL=style.css.map */
