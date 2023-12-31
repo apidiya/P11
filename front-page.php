@@ -69,10 +69,10 @@
 
                         <!-- Filtre par Ancienneté -->
                         <div class="filter2">
-                            <select name="category" id="category">
-                                <option value="">Trier par </option>
-                                <option value="">des plus récentes aux plus anciennes</option>
-                                <option value="">des plus anciennes au plus récentes</option>
+                            <select name="orderby" id="orderby">
+                                <option value="">Trier par</option>
+                                <option value="date_desc">des plus récentes aux plus anciennes</option>
+                                <option value="date_asc">des plus anciennes aux plus récentes</option>
                             </select>
                         </div>
 
@@ -96,6 +96,7 @@
     // récupération des valeurs des filtres
     $categoryfilter = isset($_GET['categoryfilter']) ? $_GET['categoryfilter'] : '';
     $formats = isset($_GET['formats']) ? $_GET['formats'] : '';
+    $orderby = isset($_GET['orderby']) ? $_GET['orderby'] : '';
 
     // arguments de base de la requête
     $args = array(
@@ -125,6 +126,15 @@
         $args['tax_query'] = $tax_query;
     }
 
+    // ajout du filtre de tri à la requête
+    if ($orderby == 'date_desc') {
+        $args['orderby'] = 'date';
+        $args['order'] = 'DESC';
+    } elseif ($orderby == 'date_asc') {
+        $args['orderby'] = 'date';
+        $args['order'] = 'ASC';
+    }
+
     // création d' une nouvelle instance de WP_Query
     $query = new WP_Query($args);
 
@@ -139,7 +149,6 @@
     // réinitialisation de la requête
     wp_reset_postdata();
     ?>
-</div>
 </div>
 
 <!-- bouton "Charger plus" -->
