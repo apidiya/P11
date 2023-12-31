@@ -34,9 +34,10 @@ function script_JS_Custom() {
     // Affichage des images miniature (script JQuery)
     wp_enqueue_script('singleMiniature', get_stylesheet_directory_uri() . '/js/singleMiniature.js', array('jquery'), '1.0.0', true);
 
-    // Affichage des photos Charger plus avec AJAX
-    wp_enqueue_script('loadmore', get_stylesheet_directory_uri() . '/js/ajax-load-more.js', array('jquery'), '1.0.0', true);
+    // Affichage des images suppplémentaires "charger plus" avec script AJAX
+    // wp_enqueue_script('ajax-load-more', get_template_directory_uri() . '/js/ajax-load-more.js', array('jquery'), '1.0.0', true);
     }
+
 add_action('wp_enqueue_scripts', 'script_JS_Custom');
 
 // Désactivation des paragraphes automatiques dans Contact Form 7
@@ -50,34 +51,7 @@ add_action( 'shutdown', function() {
     while ( @ob_end_flush() );
 } );
 
-// fonction pour gérer la requête AJAX et renvoyer les photos supplémentaires
-function load_more_photos() {
-    $paged = $_POST['page'] + 1;
-    $query_vars = json_decode(stripslashes($_POST['query']), true);
-    $query_vars['paged'] = $paged;
-    $query_vars['posts_per_page'] = 12;
-    $query_vars['orderby'] = 'date';
+//Requête ajax pour les filtres
 
-    $photos = new WP_Query($query_vars);
-    if ($photos->have_posts()) {
-        ob_start();
-        while ($photos->have_posts()) {
-            $photos->the_post();
-            get_template_part('template-parts/photo_block', null);
-        }
-        wp_reset_postdata();
-
-        $output = ob_get_clean(); // Get the buffer and clean it
-        echo $output; // Echo the output
-    }
-    else {
-        ob_clean(); // Clean any previous output
-        echo 'no_posts';
-    }
-        die();
-
-}
-add_action('wp_ajax_nopriv_load_more', 'load_more_photos');
-add_action('wp_ajax_load_more', 'load_more_photos');
 
 ?>
