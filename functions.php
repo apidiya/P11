@@ -46,7 +46,6 @@ function script_JS_Custom() {
     
     // Affichage des images suppplémentaires "charger plus" et filtres avec script AJAX
     wp_enqueue_script('ajax-load-more', get_template_directory_uri() . '/js/ajax-load-more.js', array('jquery'), '1.0.0', true);
-
     // Passer l'objet ajax_params au script
     wp_localize_script('ajax-load-more', 'ajax_params', array(
         'ajax_url' => admin_url('admin-ajax.php'),

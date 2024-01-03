@@ -151,7 +151,10 @@
     ?>
 </div>
 
-<div id="more_posts">
+<div id="more_photos" class="photo-suggestions">
+</div>
+
+<div class="more_btn">
     <button id="load_more">Charger plus</button>
 </div>
 <!-- footer -->

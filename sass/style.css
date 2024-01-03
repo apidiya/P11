@@ -527,7 +527,7 @@ body {
   justify-content: flex-end;
 }
 
-#more_posts {
+.more_btn {
   display: flex;
   justify-content: center;
 }
