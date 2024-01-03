@@ -65,17 +65,31 @@ function filter_posts_by_ajax_callback() {
     // check_ajax_referer('filter_posts', 'security');
     $paged = isset($_POST['paged']) ? $_POST['paged'] : 1;
     $orderby = $_POST['orderby'];
+    $nberphotos = $_POST['nberphotos'];
     $category = $_POST['category'];
     $format = $_POST['format'];
     $args = array(
         'post_type' => 'photo',
-        'posts_per_page' => 12,
-        'paged' => $paged,
-        'orderby' => $orderby,
-        'category' => $category,
-        'format' => $format,
+        'posts_per_page' => $nberphotos,
+        'paged' => $paged
     );
-
+    // construction de la tax_query en fonction des filtres définis
+        // $tax_query = array('relation' => 'AND');
+        if (!empty($category)) {
+            $args['tax_query'][] = array(
+                'taxonomy' => 'categorie',
+                'field'    => 'slug',
+                'terms'    => $category,
+            );
+        }
+        if (!empty($format)) {
+            $args['tax_query'][] = array(
+                'taxonomy' => 'format',
+                'field'    => 'slug',
+                'terms'    => $format,
+            );
+        }
+   
     // Ajoutez l'ordre à la requête en fonction de la valeur de 'orderby'
     if ($orderby == 'date_desc') {
         $args['orderby'] = 'date';
@@ -86,16 +100,17 @@ function filter_posts_by_ajax_callback() {
     }
     
     $my_posts = new WP_Query($args);
+    $datamax = $my_posts->max_num_pages;
     if ($my_posts->have_posts()) :
         while ($my_posts->have_posts()) : $my_posts->the_post();
             get_template_part('templates_part/photo_block');
         endwhile;
     endif;
+
     wp_die();
 }
 add_action('wp_ajax_filter_posts_by_ajax', 'filter_posts_by_ajax_callback');
 add_action('wp_ajax_nopriv_filter_posts_by_ajax', 'filter_posts_by_ajax_callback');
-
 
 // Fonction de rappel AJAX pour charger plus de posts
 function load_more_photos() {

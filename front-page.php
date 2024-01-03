@@ -86,72 +86,12 @@
     </div>
 
 <!-- Affichage des photos -->
-<div class="photo-suggestions">
-    <!-- récupération des photos de même catégorie avec WP_query -->
-    <?php
-    // récupération des valeurs des filtres
-    $categoryfilter = isset($_GET['categoryfilter']) ? $_GET['categoryfilter'] : '';
-    $formats = isset($_GET['formats']) ? $_GET['formats'] : '';
-    $orderby = isset($_GET['orderby']) ? $_GET['orderby'] : '';
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-    // arguments de base de la requête
-    $args = array(
-        'post_type' => 'photo',
-        'posts_per_page' => 12,
-        'paged' => $paged,
-    );
-
-    // construction de la tax_query en fonction des filtres définis
-    $tax_query = array('relation' => 'AND');
-    if (!empty($categoryfilter)) {
-        $tax_query[] = array(
-            'taxonomy' => 'categorie',
-            'field'    => 'slug',
-            'terms'    => $categoryfilter,
-        );
-    }
-    if (!empty($formats)) {
-        $tax_query[] = array(
-            'taxonomy' => 'format',
-            'field'    => 'slug',
-            'terms'    => $formats,
-        );
-    }
-
-    // si au moins un filtre a été défini, ajoutez la tax_query aux arguments de la requête
-    if (count($tax_query) > 1) {
-        $args['tax_query'] = $tax_query;
-    }
-
-    // ajout du filtre de tri à la requête
-    if ($orderby == 'date_desc') {
-        $args['orderby'] = 'date';
-        $args['order'] = 'DESC';
-    } elseif ($orderby == 'date_asc') {
-        $args['orderby'] = 'date';
-        $args['order'] = 'ASC';
-    }
-
-    // création d' une nouvelle instance de WP_Query
-    $query = new WP_Query($args);
-
-    // boucle sur les résultats
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
-            $post_ids[] = get_the_ID(); // Ajoutez l'ID du post à un tableau
-            get_template_part('templates_part/photo_block');
-            
-        }
-    }
-
-    // réinitialisation de la requête
-    wp_reset_postdata();
-    ?>
+<div id="more_posts" class="photo-suggestions">
+    
 </div>
 
 <div id="more_photos" class="photo-suggestions">
+
 </div>
 
 <div class="more_btn">

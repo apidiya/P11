@@ -1,6 +1,6 @@
  <div class="suggested-photo">
     
-        <img src="<?php
+        <img class="photo-template" src="<?php
                     $photo = get_field('photo');
                     echo $photo['url'];
                     ?>" alt="photographie">
