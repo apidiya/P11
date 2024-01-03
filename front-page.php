@@ -34,7 +34,7 @@
 <div class="page-container">
 <!-- Filtrage des photos -->
     <div class="filters">
-        <form action="" method="get"> 
+        <form action=""> 
             <!-- Filtre par Catégorie -->
             <div class="filter1">
                 <select name="categoryfilter" id="category">
@@ -89,14 +89,6 @@
 <div class="photo-suggestions">
     <!-- récupération des photos de même catégorie avec WP_query -->
     <?php
-    // arguments de la requête
-    $args = array(
-        'post_type' => 'photo',
-        'posts_per_page' => 12, 
-    );
-    ?>
-    
-    <?php
     // récupération des valeurs des filtres
     $categoryfilter = isset($_GET['categoryfilter']) ? $_GET['categoryfilter'] : '';
     $formats = isset($_GET['formats']) ? $_GET['formats'] : '';
@@ -149,7 +141,6 @@
         while ($query->have_posts()) {
             $query->the_post();
             $post_ids[] = get_the_ID(); // Ajoutez l'ID du post à un tableau
-            // var_dump($post_ids);    // Affichez le tableau pour vérifier que les IDs sont ajoutés
             get_template_part('templates_part/photo_block');
             
         }
@@ -158,12 +149,12 @@
     // Passez les IDs des posts à votre script JavaScript
     wp_localize_script('ajax-load-more', 'ajax_params', array(
         'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('load_more_posts'),
+        // 'nonce' => wp_create_nonce('load_more_posts'),
         'excluded_posts' => $post_ids, // Ajoutez le tableau d'IDs de posts
+        'paged' => $paged,
         'orderby' => $orderby,
         'category' => $category,
         'format' => $format,
-        var_dump($post_ids),
     ));
 
     // réinitialisation de la requête
