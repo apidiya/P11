@@ -44,9 +44,10 @@ function script_JS_Custom() {
     // Affichage des images miniature (script JQuery)
     wp_enqueue_script('singleMiniature', get_stylesheet_directory_uri() . '/js/singleMiniature.js', array('jquery'), '1.0.0', true);
     
-    // Affichage des images suppplémentaires "charger plus" avec script AJAX
+    // Affichage des images suppplémentaires "charger plus" et filtres avec script AJAX
     wp_enqueue_script('ajax-load-more', get_template_directory_uri() . '/js/ajax-load-more.js', array('jquery'), '1.0.0', true);
-    // Passer l'objet ajax_params à votre script
+
+    // Passer l'objet ajax_params au script
     wp_localize_script('ajax-load-more', 'ajax_params', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'nonce' => wp_create_nonce('load_more_posts'),
@@ -55,11 +56,11 @@ function script_JS_Custom() {
         'category' => $category,
         'format' => $format,
     ));
+    
 }
 add_action('wp_enqueue_scripts', 'script_JS_Custom');
 
-// ------- partie AJAX ------------
-
+    // ------- Partie fonctions AJAX ------------
 // Fonction de rappel AJAX pour filtrer les posts
 function filter_posts_by_ajax_callback() {
     // check_ajax_referer('filter_posts', 'security');
@@ -98,34 +99,24 @@ add_action('wp_ajax_nopriv_filter_posts_by_ajax', 'filter_posts_by_ajax_callback
 
 
 // Fonction de rappel AJAX pour charger plus de posts
-function load_posts_by_ajax_callback() {
-    // check_ajax_referer('load_more_posts', 'security');
-    $paged = isset($_POST['page']) ? $_POST['page'] : 1;
-    $paged = $_POST['page'];
-    $excluded_posts = $_POST['excluded_posts'];
-    $orderby = $_POST['orderby'];
-    $category = $_POST['category'];
-    $format = $_POST['format'];
+function load_more_photos() {
+    // check_ajax_referer('my_nonce', 'security');
+    $paged = $_POST['paged'];
     $args = array(
         'post_type' => 'photo',
         'posts_per_page' => 12,
         'paged' => $paged,
-        'post__not_in' => $excluded_posts,
-        'orderby' => $orderby,
-        'category' => $category,
-        'format' => $format,
     );
-    $my_posts = new WP_Query($args);
-    if ($my_posts->have_posts()) :
-        while ($my_posts->have_posts()) : $my_posts->the_post();
+    $my_photos = new WP_Query($args);
+    if ($my_photos->have_posts()) :
+        while ($my_photos->have_posts()) : $my_photos->the_post();
             get_template_part('templates_part/photo_block');
         endwhile;
-    else :
-        echo 'no more posts';
     endif;
+
     wp_die();
 }
-add_action('wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax_callback');
-add_action('wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax_callback');
+add_action('wp_ajax_load_more_photos', 'load_more_photos');
+add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
 
 ?>

@@ -527,12 +527,12 @@ body {
   justify-content: flex-end;
 }
 
-.loadmore-btn-container {
+#more_posts {
   display: flex;
   justify-content: center;
 }
 
-#load-more-button {
+#load_more {
   font-family: "space_monoregular";
   font-size: 12px;
   font-weight: 400;
@@ -543,6 +543,6 @@ body {
   cursor: pointer;
 }
 
-#load-more-button:hover {
+#load_more:hover {
   border: 2px solid black;
 }/*# sourceMappingURL=style.css.map */

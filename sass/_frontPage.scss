@@ -74,12 +74,12 @@ select {
 }
 
 // bouton "Charger plus"
-.loadmore-btn-container {
+#more_posts {
     display: flex;
     justify-content: center;
   }
   
-  #load-more-button {
+  #load_more {
     font-family: "space_monoregular";
     font-size: 12px;
     font-weight: 400;
@@ -89,6 +89,6 @@ select {
     background-color: #D8D8D8;
     cursor: pointer;
   }
-  #load-more-button:hover {
+  #load_more:hover {
     border: 2px solid black;
   }

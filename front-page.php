@@ -80,8 +80,8 @@
                 </select>
             </div>
 
-            <input type="submit" value="Appliquer">
-            <input type="hidden" name="action" value="myfilter">
+            <!-- <input type="submit" value="Appliquer">
+            <input type="hidden" name="action" value="myfilter"> -->
         </form>
     </div>
 
@@ -146,24 +146,13 @@
         }
     }
 
-    // Passez les IDs des posts à votre script JavaScript
-    wp_localize_script('ajax-load-more', 'ajax_params', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-        // 'nonce' => wp_create_nonce('load_more_posts'),
-        'excluded_posts' => $post_ids, // Ajoutez le tableau d'IDs de posts
-        'paged' => $paged,
-        'orderby' => $orderby,
-        'category' => $category,
-        'format' => $format,
-    ));
-
     // réinitialisation de la requête
     wp_reset_postdata();
     ?>
+</div>
 
-    <div id="more_posts">
-        <button id="load_more">Charger plus</button>
-    </div>
+<div id="more_posts">
+    <button id="load_more">Charger plus</button>
 </div>
 <!-- footer -->
 <?php get_footer(); ?>

@@ -1,6 +1,5 @@
 console.log('ajax-load-more.js loaded');
 
-var page = 2;
 jQuery(function($) {
     // Écouter les changements de valeur des filtres
     $('#category, #format, #orderby').on('change', function() {
@@ -9,37 +8,27 @@ jQuery(function($) {
         var format = $('#format').val();
         var data = {
             'action': 'filter_posts_by_ajax',
-            'paged' : 1,
+            'paged' : page,
             'orderby': orderby,
             'category': category,
             'format': format,
-            // 'security': ajax_params.nonce,
+            'security': ajax_params.nonce,
         };
         $.post(ajax_params.ajax_url, data, function(response) {
-            $('#more_posts').html(response);
+            $('#more_posts').html(response); // remplacer les posts par les nouveaux posts une fois qu'ils sont filtrés
         });
     });
 });
 
     // Charger plus de posts
-    $('body').on('click', '#load_more', function(e) {
-        e.preventDefault();
-        console.log(ajax_params.excluded_posts); // Affichez les IDs des posts à exclure
+    $('#load_more').click(function() {
         var data = {
-            'action': 'load_posts_by_ajax',
-            'page': page,
-            'excluded_posts': ajax_params.excluded_posts, // Ajoutez les IDs des posts à exclure
-            'orderby': ajax_params.orderby,
-            'category': ajax_params.category,
-            'format': ajax_params.format,
-            // 'security': ajax_params.nonce, // Nous passons le nonce vérifié à notre fichier functions.php afin de vérifier la requête
+            'action': 'load_more_photos',
+            'paged': $('.photo_block').length / 12 + 1, // calculez la page actuelle en fonction du nombre de photos déjà chargées
+            'security': ajax_params.nonce,
         };
+    
         $.post(ajax_params.ajax_url, data, function(response) {
-            if(response != '') {
-                $('#more_posts').append(response);
-                page++;
-            } else {
-                $('#load_more').hide();
-            }
+            $('#more_photos').append(response); // ajoutez les nouvelles photos à la page
         });
     });
