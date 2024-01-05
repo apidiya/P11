@@ -1,35 +1,8 @@
 // CSS de la lightbox 
 
-// .fancybox-button svg {
-// display: none !important; /* Supprimez l'icône par défaut */
-// }
-
-// .fancybox-navigation .fancybox-button {
-//     width: 340px !important;
-// }
-
 .fancybox-custom-layout .fancybox-bg {
     background: rgba(0, 0, 0, 0.8);
 }
-
-
-// /* Supprimez le style par défaut des flèches */
-// .fancybox-button--arrow_right,
-// .fancybox-button--arrow_left {
-//   background: transparent !important; /* Utilisez !important si nécessaire pour écraser les styles par défaut */
-// }
-
-// /* Ajoutez vos propres images pour les flèches */
-// .fancybox-button--arrow_right:before,
-// .fancybox-button--arrow_left:before {
-//   content: url('../assets/images/Next.png'); /* Remplacez par le chemin de votre image de droite */
-//   margin-left: 25px;
-// }
-
-// .fancybox-button--arrow_left:before {
-//   content: url('../assets/images/Prev.png'); /* Remplacez par le chemin de votre image de gauche */
-//   margin-right: 25px;
-// }
 
 /* Force les flèches à rester visibles */
 .fancybox-button--arrow_right,
@@ -37,14 +10,6 @@
   visibility: visible !important; /* Utilisez !important pour forcer l'affichage */
   opacity: 1 !important; /* Utilisez !important pour forcer la pleine opacité */
 }
-
-// .fancybox-button--arrow_left {
-// padding-left: 70px !important; /* Ajustez la taille pour décaler la flèche de droite */
-// }
-
-// .fancybox-button--arrow_right {
-// padding-right: 70px !important; /* Ajustez la taille pour décaler la flèche de gauche */
-// }
 
 /* Assurez-vous que les flèches ne disparaissent pas après une certaine période */
 .fancybox-button--arrow_right:hover,
@@ -55,7 +20,7 @@
 /* Ajustez la position du texte si nécessaire */
 .fancybox-button--arrow_right:after,
 .fancybox-button--arrow_left:after {
-  
+
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -74,6 +39,10 @@
   right: -100px; /* Ajustez la taille pour décaler le texte à droite de la flèche de gauche */
 }
 
+// supprime les boutons de navigation d'origine
+.fancybox-navigation .fancybox-button {
+  height: 0px !important;
+} 
 
 .fancybox-caption__body {
     display: flex;

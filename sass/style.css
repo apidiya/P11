@@ -590,6 +590,10 @@ body {
   right: -100px; /* Ajustez la taille pour décaler le texte à droite de la flèche de gauche */
 }
 
+.fancybox-navigation .fancybox-button {
+  height: 0px !important;
+}
+
 .fancybox-caption__body {
   display: flex;
   justify-content: space-around;
