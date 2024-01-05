@@ -135,9 +135,10 @@
             </div>
 
             <div class="all-photos-btn">
-                <button id="button-photos">Toutes les photos</button>
-                <a href="<?php echo home_url(); ?>"></a>
-            </div> 
+                <a href="<?php echo home_url(); ?>">
+                    <button id="button-photos">Toutes les photos</button>
+                </a>
+            </div>
 
         </section>
     </div>

@@ -38,8 +38,12 @@ body {
         object-fit: cover;
     }
 }
+
+// filtres de recherche
 .filters {
 padding: 40px 0;
+
+
 
 select {
     flex: 1;
@@ -73,6 +77,11 @@ select {
     justify-content: flex-end;
 }
 
+.selected-filter {
+    background-color: #FF0000; /* Couleur de fond */
+    color: #FFFFFF; /* Couleur de texte */
+}
+
 // bouton "Charger plus"
 .more_btn {
     display: flex;
@@ -92,3 +101,4 @@ select {
   #load_more:hover {
     border: 2px solid black;
   }
+

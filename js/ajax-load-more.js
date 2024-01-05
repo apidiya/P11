@@ -42,7 +42,11 @@
     $('#category, #format, #orderby').on('change', function() {
         nextPage = 1; // Réinitialiser nextPage à 1 lorsqu'un filtre est modifié
         filterAndLoadPosts();
+
     } );
+
+    
+
 
     // Charger plus de posts
     $('#load_more').click(function() {
