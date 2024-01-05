@@ -149,10 +149,8 @@ function enqueue_fancybox() {
             buttons : [
                 "close"
             ],
-            arrows : true,
-            fullScreen : {
-                autoStart : true,
-            },
+            showNavArrows : false,
+            arrows : false,
             infobar: false,
             touch: false,
             baseClass: "fancybox-custom-layout",

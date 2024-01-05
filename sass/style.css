@@ -556,20 +556,17 @@ body {
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* Supprimez le style par défaut des flèches */
+/* Force les flèches à rester visibles */
 .fancybox-button--arrow_right,
 .fancybox-button--arrow_left {
-  background: transparent !important; /* Utilisez !important si nécessaire pour écraser les styles par défaut */
+  visibility: visible !important; /* Utilisez !important pour forcer l'affichage */
+  opacity: 1 !important; /* Utilisez !important pour forcer la pleine opacité */
 }
 
-/* Ajoutez vos propres images pour les flèches */
-.fancybox-button--arrow_right:before,
-.fancybox-button--arrow_left:before {
-  content: url("./images/Next.png"); /* Remplacez par le chemin de votre image de droite */
-}
-
-.fancybox-button--arrow_left:before {
-  content: url("chemin/vers/votre-image-gauche.svg"); /* Remplacez par le chemin de votre image de gauche */
+/* Assurez-vous que les flèches ne disparaissent pas après une certaine période */
+.fancybox-button--arrow_right:hover,
+.fancybox-button--arrow_left:hover {
+  opacity: 1 !important; /* Utilisez !important pour maintenir la visibilité au survol */
 }
 
 /* Ajustez la position du texte si nécessaire */
@@ -580,23 +577,24 @@ body {
   transform: translateY(-50%);
   color: #ffffff; /* Couleur du texte */
   font-family: "space_monoregular"; /* Si vous utilisez une police personnalisée */
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .fancybox-button--arrow_right:after {
-  content: "Suivante";
-  left: -taille-du-texte; /* Ajustez la taille pour décaler le texte à gauche de la flèche de droite */
+  content: "Suivante  →";
+  left: -100px; /* Ajustez la taille pour décaler le texte à gauche de la flèche de droite */
 }
 
 .fancybox-button--arrow_left:after {
-  content: "Précédente";
-  right: -taille-du-texte; /* Ajustez la taille pour décaler le texte à droite de la flèche de gauche */
+  content: "← Précédente";
+  right: -100px; /* Ajustez la taille pour décaler le texte à droite de la flèche de gauche */
 }
 
 .fancybox-caption__body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  text-transform: uppercase;
 }
 .fancybox-caption__body .fancybox-caption__body__title {
   font-family: "poppinsregular";
