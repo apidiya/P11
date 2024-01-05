@@ -8,7 +8,7 @@
     <div class="overlay">
 
         <div class="overlay-fullscreen">
-        <a href="<?php echo $photo['url']; ?>">
+        <a href="<?php echo $photo['url']; ?>" class="fancybox">
                 <img src="<?php echo get_template_directory_uri()?>/assets/images/Icon_fullscreen.png" alt=""></a>
         </div>
 

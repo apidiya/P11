@@ -41,9 +41,6 @@ function script_JS_Custom() {
     // Gestion de la Modale (script jQuery)
     wp_enqueue_script('modale', get_stylesheet_directory_uri() . '/js/modale.js', array('jquery'), '1.0.0', true);
 
-    // Gestion de la Lightbox (script jQuery)
-    wp_enqueue_script('lightbox', get_stylesheet_directory_uri() . '/js/lightbox.js', array('jquery'), '1.0.0', true);
-
     // Affichage des images miniature (script JQuery)
     wp_enqueue_script('singleMiniature', get_stylesheet_directory_uri() . '/js/singleMiniature.js', array('jquery'), '1.0.0', true);
     
@@ -147,8 +144,27 @@ function enqueue_fancybox() {
 
     // Initialiser Fancybox
     wp_add_inline_script('fancybox-js', '
+        function initFancybox() {
+            jQuery(".fancybox").fancybox({
+                buttons : [
+                    "slideShow",
+                    "zoom",
+                    "fullScreen",
+                    "close"
+                ],
+                arrows : true,
+                afterShow: function(instance, slide) {
+                    console.log("Fancybox is working!");
+                }
+            });
+        }
+
         jQuery(document).ready(function() {
-            jQuery(".fancybox").fancybox();
+            initFancybox();
+        });
+
+        jQuery(document).ajaxComplete(function() {
+            initFancybox();
         });
     ');
 }

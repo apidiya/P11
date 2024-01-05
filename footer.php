@@ -13,7 +13,4 @@
   <!--chargement du template modale.php  -->
     <?php get_template_part('templates_part/modale'); ?>
 
-  <!-- chargement du template de la lightbox -->
-    <?php get_template_part('templates_part/lightbox'); ?>
-
 </footer>
