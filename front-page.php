@@ -86,12 +86,10 @@
     </div>
 
 <!-- Affichage des photos -->
-<div id="more_posts" class="photo-suggestions">
-    
+<div id="more_posts" class="photo-suggestions">    
 </div>
 
 <div id="more_photos" class="photo-suggestions">
-
 </div>
 
 <div class="more_btn">

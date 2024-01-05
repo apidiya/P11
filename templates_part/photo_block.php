@@ -6,14 +6,17 @@
                     ?>" alt="photographie">
     
     <div class="overlay">
+
         <div class="overlay-fullscreen">
-        <a href="#">
-            <img src="<?php echo get_template_directory_uri()?>/assets/images/Icon_fullscreen.png" alt=""></a>
+        <a href="<?php echo $photo['url']; ?>">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/Icon_fullscreen.png" alt=""></a>
         </div>
+
         <div class="overlay-single">
-        <a href="<?php echo get_permalink(); ?>">
-        <img src="<?php echo get_template_directory_uri()?>/assets/images/Icon_eye.png" alt=""></a>
+            <a href="<?php echo get_permalink(); ?>">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/Icon_eye.png" alt=""></a>
         </div>
+
         <div class="overlay-text">
             <p class="overlay-title"><?php echo get_the_title() ?></p>
             <p class="overlay-category"><?php 
@@ -21,8 +24,7 @@
                 foreach ( (array) $categories as $category ) {
                 echo $category->name . ' '; 
             }
-            ?></p>
-            
+            ?></p>  
         </div>
     </div>
 

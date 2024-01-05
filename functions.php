@@ -41,6 +41,9 @@ function script_JS_Custom() {
     // Gestion de la Modale (script jQuery)
     wp_enqueue_script('modale', get_stylesheet_directory_uri() . '/js/modale.js', array('jquery'), '1.0.0', true);
 
+    // Gestion de la Lightbox (script jQuery)
+    wp_enqueue_script('lightbox', get_stylesheet_directory_uri() . '/js/lightbox.js', array('jquery'), '1.0.0', true);
+
     // Affichage des images miniature (script JQuery)
     wp_enqueue_script('singleMiniature', get_stylesheet_directory_uri() . '/js/singleMiniature.js', array('jquery'), '1.0.0', true);
     
@@ -132,5 +135,23 @@ function load_more_photos() {
 }
 add_action('wp_ajax_load_more_photos', 'load_more_photos');
 add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
+
+
+// Ajout de Fancybox pour afficher la lighbox
+function enqueue_fancybox() {
+    // Inclure le CSS de Fancybox
+    wp_enqueue_style('fancybox-css', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css');
+
+    // Inclure le JavaScript de Fancybox
+    wp_enqueue_script('fancybox-js', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js', array('jquery'), null, true);
+
+    // Initialiser Fancybox
+    wp_add_inline_script('fancybox-js', '
+        jQuery(document).ready(function() {
+            jQuery(".fancybox").fancybox();
+        });
+    ');
+}
+add_action('wp_enqueue_scripts', 'enqueue_fancybox');
 
 ?>
