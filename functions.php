@@ -171,4 +171,50 @@ function enqueue_fancybox() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_fancybox');
 
+// Ajout de Select2 pour modifier la couleur des filtres selectionnés
+function enqueue_select2() {
+    // Inclure le CSS de Select2
+    wp_enqueue_style('select2-css', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css');
+
+    // Inclure le JavaScript de Select2
+    wp_enqueue_script('select2-js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js', array('jquery'), null, true);
+
+    // Initialiser Select2
+    wp_add_inline_script('select2-js', '
+    function initSelect2() {
+        jQuery("#category").select2({
+            placeholder: "Catégories",
+            allowClear: true,
+            width: "100%",
+            theme: "classic",
+            dropdownCssClass: "select2-dropdown-custom",
+            containerCssClass: "select2-container-custom",
+            selectionCssClass: "select2-selection-custom",
+            dropdownParent: jQuery("#category").parent()
+        });
+        jQuery("#format").select2({
+            placeholder: "Formats",
+            allowClear: true,
+            width: "100%",
+            theme: "classic",
+            dropdownCssClass: "select2-dropdown-custom",
+            containerCssClass: "select2-container-custom",
+            selectionCssClass: "select2-selection-custom",
+            dropdownParent: jQuery("#format").parent()
+        });
+    }
+
+    jQuery(document).ready(function() {
+        initSelect2();
+    });
+
+    jQuery(document).ajaxComplete(function() {
+        initSelect2();
+    });
+');
+}
+add_action('wp_enqueue_scripts', 'enqueue_select2');
+
+
+
 ?>
