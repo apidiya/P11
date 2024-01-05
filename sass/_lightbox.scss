@@ -1,0 +1,58 @@
+// CSS de la lightbox 
+
+.fancybox-custom-layout .fancybox-bg {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Supprimez le style par défaut des flèches */
+.fancybox-button--arrow_right,
+.fancybox-button--arrow_left {
+  background: transparent !important; /* Utilisez !important si nécessaire pour écraser les styles par défaut */
+}
+
+/* Ajoutez vos propres images pour les flèches */
+.fancybox-button--arrow_right:before,
+.fancybox-button--arrow_left:before {
+  content: url('./images/Next.png'); /* Remplacez par le chemin de votre image de droite */
+}
+
+.fancybox-button--arrow_left:before {
+  content: url('chemin/vers/votre-image-gauche.svg'); /* Remplacez par le chemin de votre image de gauche */
+}
+
+/* Ajustez la position du texte si nécessaire */
+.fancybox-button--arrow_right:after,
+.fancybox-button--arrow_left:after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff; /* Couleur du texte */
+  font-family: "space_monoregular"; /* Si vous utilisez une police personnalisée */
+  font-size: 12px;
+}
+
+.fancybox-button--arrow_right:after {
+  content: "Suivante";
+  left: -taille-du-texte; /* Ajustez la taille pour décaler le texte à gauche de la flèche de droite */
+}
+
+.fancybox-button--arrow_left:after {
+  content: "Précédente";
+  right: -taille-du-texte; /* Ajustez la taille pour décaler le texte à droite de la flèche de gauche */
+}
+
+
+.fancybox-caption__body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .fancybox-caption__body__title {
+        font-family: "poppinsregular";
+        font-size: 14px;
+        font-weight: 400;
+        color: white;
+    }
+
+}
