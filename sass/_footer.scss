@@ -1,8 +1,8 @@
 footer {
-  height: 40px;
+  height: 60px;
+  margin:0 auto;
   display: flex;
   flex-direction: row;
-  margin:0 auto;
   justify-content: space-around;
   align-items: center;
   width: 100%;
@@ -26,6 +26,13 @@ footer {
   margin: 0; 
   padding: 0; 
   align-items: center; 
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
 }
 
 .footer-menu li {

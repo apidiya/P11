@@ -7,6 +7,7 @@
   position: relative;
 }
 .main-content {
+  margin-top: 40px;
     width: 100%;
     height: 843px;
   }
@@ -124,6 +125,11 @@
 .photo-suggestions {
   display: flex;
   flex-wrap: wrap;
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .suggested-photo-container h3{
@@ -137,10 +143,19 @@
   width: 48%;
   margin: 1%;
 }
+
 .suggested-photo img {
   width: 100%;
   height: 60vh;
   object-fit: cover;
+
+  @media screen and (max-width: 1200px) {
+    height: 50vh;    
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 30vh;    
+  }
 }
 
 // Toutes les photos
