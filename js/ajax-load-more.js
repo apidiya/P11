@@ -24,6 +24,7 @@
         if (!response.trim() || photoCount < nberphotos) {
         $('#load_more').hide();
         }
+        else {$('#load_more').show();}
             if (nextPage === 1) {
                 $('#more_posts').html(response); // remplacer les posts par les nouveaux posts une fois qu'ils sont filtrés
                 $('#more_photos').html(""); // remplacer les photos par les nouvelles photos une fois qu'elles sont filtrées

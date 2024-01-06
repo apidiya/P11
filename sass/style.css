@@ -63,6 +63,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .header_container {
@@ -229,6 +230,7 @@ footer {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+  position: relative;
 }
 
 .main-content {
@@ -399,6 +401,8 @@ footer {
 
 .overlay {
   display: none;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
@@ -444,6 +448,11 @@ footer {
   font-family: "space_monoregular";
   font-size: 14px;
   font-weight: 400;
+}
+
+.overlay:hover {
+  display: block;
+  opacity: 1;
 }
 
 .suggested-photo {
@@ -552,6 +561,11 @@ body {
   border: 2px solid black;
 }
 
+.select2-results__option--highlighted {
+  background-color: #ff0000 !important; /* Remplacez #ff0000 par la couleur que vous voulez */
+  color: #ffffff !important; /* Remplacez #ffffff par la couleur que vous voulez */
+}
+
 .fancybox-custom-layout .fancybox-bg {
   background: rgba(0, 0, 0, 0.8);
 }
@@ -605,4 +619,13 @@ body {
   font-size: 14px;
   font-weight: 400;
   color: white;
+}
+
+.fancybox-slide {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.fancybox-slide--current {
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */

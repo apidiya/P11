@@ -58,3 +58,13 @@
     }
 
 }
+
+// transition de la lightbox
+.fancybox-slide {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.fancybox-slide--current {
+  opacity: 1;
+}

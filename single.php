@@ -6,6 +6,7 @@
     <?php
     global $wp_query;
     ?>
+
     <div class="page-container">
 
         <!-- section détail photo -->

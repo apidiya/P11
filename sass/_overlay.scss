@@ -1,5 +1,7 @@
 .overlay {
     display: none;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0; // Ajoutez cette ligne pour rendre l'overlay invisible par défaut
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
@@ -47,6 +49,11 @@
             font-size: 14px;
             font-weight: 400;
         }
+}
+
+.overlay:hover {
+    display: block;
+    opacity: 1;
 }
 
 .suggested-photo {

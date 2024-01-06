@@ -102,3 +102,8 @@ select {
     border: 2px solid black;
   }
 
+
+.select2-results__option--highlighted {
+    background-color: #ff0000 !important; /* Remplacez #ff0000 par la couleur que vous voulez */
+    color: #ffffff !important; /* Remplacez #ffffff par la couleur que vous voulez */
+}
