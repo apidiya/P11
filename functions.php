@@ -3,6 +3,7 @@
 // Ajout des styles personnalisés
 function enqueue_custom_styles() {
     wp_enqueue_style('custom-style', get_template_directory_uri() . '/sass/style.css');
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'); // Ajout de Font Awesome
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
 
@@ -43,6 +44,9 @@ function script_JS_Custom() {
 
     // Affichage des images miniature (script JQuery)
     wp_enqueue_script('singleMiniature', get_stylesheet_directory_uri() . '/js/singleMiniature.js', array('jquery'), '1.0.0', true);
+
+    // Affichage du menu burger (script JQuery)
+    wp_enqueue_script('burgerMenu', get_stylesheet_directory_uri() . '/js/menuBurger.js', array('jquery'), '1.0.0', true);
     
     // Affichage des images suppplémentaires "charger plus" et filtres avec script AJAX
     wp_enqueue_script('ajax-load-more', get_template_directory_uri() . '/js/ajax-load-more.js', array('jquery'), '1.0.0', true);
@@ -134,7 +138,7 @@ add_action('wp_ajax_load_more_photos', 'load_more_photos');
 add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
 
 
-// Ajout de Fancybox pour afficher la lighbox
+// Ajout de Fancybox pour afficher la lightbox
 function enqueue_fancybox() {
     // Inclure le CSS de Fancybox
     wp_enqueue_style('fancybox-css', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css');
@@ -153,6 +157,8 @@ function enqueue_fancybox() {
             arrows : false,
             infobar: false,
             touch: false,
+            loop: true,
+            clickContent: false,
             baseClass: "fancybox-custom-layout",
             afterShow: function(instance, slide) {
                 console.log("Fancybox is working!");

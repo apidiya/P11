@@ -1,0 +1,23 @@
+/* Style pour le burger menu */
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    /* Ajouter le style pour les barres ici */
+  }
+  
+  /* menu déroulant */
+  .nav-links-container {
+    display: block;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .burger-menu {
+      display: block;
+    }
+    .nav-links-container {
+      display: none;
+    }
+  }
+  

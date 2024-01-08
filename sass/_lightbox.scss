@@ -39,6 +39,18 @@
   right: -100px; /* Ajustez la taille pour décaler le texte à droite de la flèche de gauche */
 }
 
+@media (max-width: 765px) { /* Ajustez la valeur pour le seuil que vous voulez */
+  .fancybox-button--arrow_right:after {
+    content: "\2192";
+    left: 10px; /* Ajustez la taille pour décaler la flèche de droite */
+  }
+
+  .fancybox-button--arrow_left:after {
+    content: "\2190";
+    right: 10px; /* Ajustez la taille pour décaler la flèche de gauche */
+  }
+}
+
 // supprime les boutons de navigation d'origine
 .fancybox-navigation .fancybox-button {
   height: 0px !important;

@@ -1,6 +1,6 @@
 console.log(" modale.js est lancé ")
 
-// Attends que le document soit prêt
+// Fonction pour ouvrir et fermer la modale
 $(document).ready(function() {
     // Sélectionne le bouton de contact et l'overlay de la modale
     const boutonContact = $('#menu-item-29');
@@ -50,3 +50,4 @@ $(document).ready(function() {
         }
     });
 });
+

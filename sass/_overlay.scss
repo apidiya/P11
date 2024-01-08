@@ -1,7 +1,7 @@
 .overlay {
     display: none;
     transition: opacity 0.3s ease-in-out;
-    opacity: 0; // Ajoutez cette ligne pour rendre l'overlay invisible par défaut
+    opacity: 0; // rend l'overlay invisible par défaut
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
@@ -64,5 +64,12 @@
             display: flex;
         }
     }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .suggested-photo {
+        width: 90%;        
+}
 }
 

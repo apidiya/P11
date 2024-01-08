@@ -19,7 +19,7 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Logo">
             </a>
         </div>
-        <nav class="nav-links-container">
+        <nav class="nav-links-container" id="nav-links">
             <?php
                 wp_nav_menu(array(
                     'theme_location' => 'header-menu',

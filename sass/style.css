@@ -491,6 +491,11 @@ footer {
   display: flex;
 }
 
+@media screen and (max-width: 768px) {
+  .suggested-photo {
+    width: 90%;
+  }
+}
 body {
   margin: 0;
 }
@@ -643,6 +648,16 @@ body {
   right: -100px; /* Ajustez la taille pour décaler le texte à droite de la flèche de gauche */
 }
 
+@media (max-width: 765px) { /* Ajustez la valeur pour le seuil que vous voulez */
+  .fancybox-button--arrow_right:after {
+    content: "→";
+    left: 10px; /* Ajustez la taille pour décaler la flèche de droite */
+  }
+  .fancybox-button--arrow_left:after {
+    content: "←";
+    right: 10px; /* Ajustez la taille pour décaler la flèche de gauche */
+  }
+}
 .fancybox-navigation .fancybox-button {
   height: 0px !important;
 }
@@ -667,4 +682,25 @@ body {
 
 .fancybox-slide--current {
   opacity: 1;
+}
+
+/* Style pour le burger menu */
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  /* Ajouter le style pour les barres ici */
+}
+
+/* menu déroulant */
+.nav-links-container {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .burger-menu {
+    display: block;
+  }
+  .nav-links-container {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
