@@ -55,3 +55,8 @@
         filterAndLoadPosts();
     });
 })(jQuery);
+
+// Select2 couleurs
+window.addEventListener('load', () => {
+    $('select').select2();
+});

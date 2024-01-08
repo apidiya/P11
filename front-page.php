@@ -52,10 +52,10 @@
                     }
                     ?>
                 </select>
-            </div>
+
 
             <!-- Filtre par Format -->
-            <div class="filter1">
+
                 <select name="formats" id="format">
                     <option value="">Formats</option>
                     <?php

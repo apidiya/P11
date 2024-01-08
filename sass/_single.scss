@@ -17,7 +17,13 @@
     height: 100%;
     margin: 0 auto;
     margin-bottom: 20px;
-  }
+    @media screen and (max-width: 768px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        height: 100%;
+      }      
+    }
+  
   .title-type {
     font-family: "space_monoregular";
     text-transform: uppercase;
@@ -39,6 +45,11 @@
     font-size: 66px;
     width: 67%;
     line-height: 70px;
+    @media screen and (max-width: 768px) {
+      font-size: 40px;
+      width: 100%;
+      line-height: 40px;
+    }
   }
   .title-type p {
     font-size: 14px;
@@ -81,6 +92,10 @@
     border: 2px solid transparent;
     background-color: #D8D8D8;
     cursor: pointer;
+
+    @media screen and (max-width: 600px) {
+      padding: 10px 30px; 
+  }
   }
   #boutonContact:hover {
     border: 2px solid black;
@@ -118,6 +133,12 @@
           display: flex;
           justify-content: space-between;
       }
+      @media screen and (max-width: 600px) {
+        display: none; // Masque .interaction-photo__navigation en mode mobile
+      }
+  }
+  @media screen and (max-width: 600px) {
+    display: none; // Masque .interaction-photo en mode mobile
   }
 }
 

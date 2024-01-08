@@ -35,6 +35,7 @@
 // Style CF7
 /* Styliser le conteneur de formulaire CF7 */
 .wpcf7 {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
     font-family: 'Poppins', sans-serif;
@@ -64,6 +65,7 @@
 
 /* Styliser le champ textarea séparément pour contrôler la hauteur */
 .form-control-textarea {
+    width: 100%;
     resize: none; /* Empêche l'utilisateur de redimensionner */
     border-radius: 8px;
     border: 1px solid #ccc;

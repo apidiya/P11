@@ -1,11 +1,17 @@
-/* Navigation menu burger mobile */
-console.log("Navigation menu burger mobile : son js est chargé");
+console.log('menuBurger.js');
 
-function toggleMenu() {
-    var x = document.getElementById("nav-links");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
+$(document).ready(function () {
+    const header = $('header');
+    const menuBurger = $('.burgerMenu');
+    const nav = $('.nav-links-container');
+    const menuLinks = $('.header-menu li a');
+
+    menuBurger.on('click', function () {
+        const isOpen = header.hasClass('open');
+
+        header.toggleClass('open', !isOpen);
+        menuBurger.toggleClass('open', !isOpen);
+        nav.toggleClass('open', !isOpen);
+
+    });
+});

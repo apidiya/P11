@@ -13,13 +13,22 @@
 <body <?php body_class(); ?>>
 
 <header class="header">
-    <div class="header_container">
+    <div class="header_container" id="site-navigation">
         <div class="logo">
             <a href="<?php echo home_url('/'); ?>">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Logo">
             </a>
         </div>
-        <nav class="nav-links-container" id="nav-links">
+
+        <!-- menu burger -->
+        <div class="burgerMenu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <!-- Navigation (Menu) -->
+        <nav class="nav-links-container">
             <?php
                 wp_nav_menu(array(
                     'theme_location' => 'header-menu',

@@ -50,7 +50,7 @@ body {
 
 // filtres de recherche
 .filters {
-padding: 40px 0;
+padding: 30px;
 
 
 
@@ -71,6 +71,11 @@ select {
 .filters form {
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 600px) {
+        width: auto;
+        gap: 10px;
+        flex-direction: column;
+      }
 }
 
 .filter1 {
@@ -78,18 +83,24 @@ select {
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    @media screen and (max-width: 600px) {
+        width: auto;
+      }
 }
 
 .filter2 {
     width: 25%;
     display: flex;
     justify-content: flex-end;
+    @media screen and (max-width: 600px) {
+        width: auto;
+      }
 }
 
-.selected-filter {
-    background-color: #FF0000; /* Couleur de fond */
-    color: #FFFFFF; /* Couleur de texte */
-}
+// .selected-filter {
+//     background-color: #FF0000; /* Couleur de fond */
+//     color: #FFFFFF; /* Couleur de texte */
+// }
 
 // bouton "Charger plus"
 .more_btn {
@@ -112,7 +123,99 @@ select {
   }
 
 
+
+
+/********************/
+/* Select2 **********/
+/********************/
+// .select2{width: 100%;}
+// .select2-container .select2-selection--single,
+// .select2-container--default .select2-search--dropdown .select2-search__field{
+// 	border-color: var(--color-border, #C0C0C0);
+// }
+
+// .select2-container .select2-selection--single,
+// .select2-dropdown .select2-search--dropdown .select2-search__field{
+// 	background-color: var(--color-white, #FFFFFF);
+// 	border-radius: var(--br-600, 24px);
+// 	border-radius: 0;
+// }
+
+// .select2-container .select2-selection--single,
+// .select2-container .select2-selection--single .select2-selection__rendered{
+// 	height: auto;
+// 	line-height: normal;
+// }
+
+// .select2-dropdown .select2-search--dropdown .select2-search__field,
+// .select2-container .select2-selection--single .select2-selection__rendered{
+// 	padding: var(--padding-input, 15px 30px);
+// 	color: var(--color-text, #000000);
+// }
+
+// .select2-container--default .select2-selection--single .select2-selection__arrow{
+// 	height: 100%;
+// 	width: var(--gap-700, 48px);
+// }
+
+// .select2-search--dropdown,
+// .select2-results__option[aria-selected],
+// .select2-results__option[data-selected],
+// .select2-results__option.select2-results__message{
+// 	padding-inline: var(--gap-300, 12px);
+// }
+
+// .select2-dropdown{
+// 	border-radius: var(--br-200, 8px);
+// 	border-radius: 0;
+// 	overflow: hidden;
+// }
+
+// .select2-search--dropdown{
+// 	padding-block: var(--gap-300, 12px);
+// }
+
+.select2-dropdown .select2-search--dropdown .select2-search__field{
+	display: none;
+}
+
+.select2-container--default .select2-results__option[aria-selected=true],
+.select2-container--default .select2-results__option[data-selected=true],
+.select2-container--default .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-results__option--highlighted[data-selected]:hover,
+.select2-container--default .select2-results__option--highlighted[aria-selected]:focus,
+.select2-results__option[aria-selected=true],
+.select2-container--default .select2-results__option--highlighted[data-selected]:focus{
+	background-color: #ef8e8e;
+	color: var(--color-white, #FFFFFF);
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-results__option--highlighted[data-selected]{
+	background-color:#FF0000;
+	color: var(--color-primary, #000000);
+    
+}
+
 .select2-results__option--highlighted {
     background-color: #ff0000 !important; /* Remplacez #ff0000 par la couleur que vous voulez */
     color: #ffffff !important; /* Remplacez #ffffff par la couleur que vous voulez */
+
+}
+
+.select2-container--default{
+    font-family: "poppinsregular";
+}
+
+.select2-container--default .select2-selection--single {
+    padding: 5px 20px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    height: 39px !important;
+    text-transform: uppercase;
+}
+
+.select2-container {
+    width: 100% !important;
 }
