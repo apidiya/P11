@@ -3,31 +3,31 @@
 <!-- Hero -->
 <section class="hero">
 <?php
-                // arguments de la requête
-                $args = array(
-                    'post_type' => 'photo',
-                    'posts_per_page' => 1, 
-                    'orderby' => 'rand',
-                );
+    // arguments de la requête
+    $args = array(
+        'post_type' => 'photo',
+        'posts_per_page' => 1, 
+        'orderby' => 'rand',
+    );
 
-                // création d' une nouvelle instance de WP_Query
-                $query = new WP_Query($args);
+    // création d' une nouvelle instance de WP_Query
+    $query = new WP_Query($args);
 
-                // boucle sur les résultats
-                if ($query->have_posts()) {
-                    while ($query->have_posts()) {
-                        $query->the_post();
-                        ?>
-                         <img src="<?php
-                                $photo = get_field('photo');
-                                echo $photo['url'];
-                                ?>" alt="photographie">
-                        <?php
-                    }
-                }
-                // réinitialisation de la requête
-                wp_reset_postdata();
-                ?>
+    // boucle sur les résultats
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            ?>
+                <img src="<?php
+                    $photo = get_field('photo');
+                    echo $photo['url'];
+                    ?>" alt="photographie">
+            <?php
+        }
+    }
+    // réinitialisation de la requête
+    wp_reset_postdata();
+    ?>
 <h1>PHOTOGRAPHE EVENT</h1>
 </section>
 
@@ -55,7 +55,6 @@
 
 
             <!-- Filtre par Format -->
-
                 <select name="formats" id="format">
                     <option value="">Formats</option>
                     <?php
@@ -79,9 +78,6 @@
                     <option value="date_asc" <?php echo isset($_GET['orderby']) && $_GET['orderby'] == 'date_asc' ? 'selected' : ''; ?>>des plus anciennes aux plus récentes</option>
                 </select>
             </div>
-
-            <!-- <input type="submit" value="Appliquer">
-            <input type="hidden" name="action" value="myfilter"> -->
         </form>
     </div>
 
@@ -94,6 +90,7 @@
 
 <div class="more_btn">
     <button id="load_more">Charger plus</button>
+</div>
 </div>
 <!-- footer -->
 <?php get_footer(); ?>

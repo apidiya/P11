@@ -1,11 +1,15 @@
-/** section détail photo **/
+// CSS de la page single photo
 
 .page-container{
   margin:0 auto;
   width: 100%;
   max-width: 1200px;
   position: relative;
-}
+  @media screen and (max-width: 1250px) {
+    width: 90%;
+  }
+} 
+
 .main-content {
   margin-top: 40px;
     width: 100%;
@@ -17,7 +21,7 @@
     height: 100%;
     margin: 0 auto;
     margin-bottom: 20px;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 700px) {
         flex-direction: column-reverse;
         align-items: center;
         height: 100%;
@@ -36,6 +40,10 @@
     border-bottom: 2px solid black;
     border-bottom-width: 40%;
     margin-right: 1%;
+    @media screen and (max-width: 700px) {
+        width: 100%;
+        margin-right: 0;
+      }
   }
   .pic-title {
     font-style: italic;
@@ -46,6 +54,7 @@
     width: 67%;
     line-height: 70px;
     @media screen and (max-width: 768px) {
+      text-align: center;
       font-size: 40px;
       width: 100%;
       line-height: 40px;
@@ -55,6 +64,7 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+    
   }
   .photo-container {
     height: 100%;
@@ -73,16 +83,25 @@
     width: 100%;
     justify-content: space-between;
     border-bottom: 2px solid black;
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
   }
+
   .contact-btn {
     display: flex;
     align-items: center;
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
   }
+
   .contact-btn h4{
     font-family: "PoppinsRegular";
     font-size: 14px;
     font-weight: 300;
     }
+
   #boutonContact {
     font-family: "space_monoregular";
     font-size: 12px;
@@ -92,11 +111,12 @@
     border: 2px solid transparent;
     background-color: #D8D8D8;
     cursor: pointer;
-
     @media screen and (max-width: 600px) {
+      margin-right: 25%;
       padding: 10px 30px; 
   }
   }
+
   #boutonContact:hover {
     border: 2px solid black;
   }
@@ -158,6 +178,9 @@
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 400;
+  @media screen and (max-width: 765px) {
+    text-align: center;
+  }
 }
 
 .suggested-photo {
@@ -169,11 +192,9 @@
   width: 100%;
   height: 60vh;
   object-fit: cover;
-
   @media screen and (max-width: 1200px) {
     height: 50vh;    
   }
-
   @media screen and (max-width: 768px) {
     height: 30vh;    
   }
@@ -195,6 +216,7 @@
   background-color: #D8D8D8;
   cursor: pointer;
 }
+
 #button-photos:hover {
   border: 2px solid black;
 }

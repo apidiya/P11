@@ -1,3 +1,5 @@
+// Script de la modale de contact
+
 console.log(" modale.js est lancé ")
 
 // Fonction pour ouvrir et fermer la modale

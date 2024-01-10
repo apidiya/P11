@@ -1,3 +1,5 @@
+// Script du caroussel miniature de la page single.php
+
 console.log("singleMiniature.js est lancé");
 
 window.addEventListener("DOMContentLoaded", () => {

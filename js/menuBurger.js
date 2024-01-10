@@ -1,3 +1,5 @@
+// Script du menu burger
+
 console.log('menuBurger.js');
 
 $(document).ready(function () {

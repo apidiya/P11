@@ -1,3 +1,5 @@
+// Script de la partie ajax du site pour les filtres et le bouton "charger plus"
+
 (function($) {
     var nextPage = 1; // commence à 2 car la première page est déjà chargée
     var nberphotos = 12;
@@ -45,10 +47,7 @@
         filterAndLoadPosts();
 
     } );
-
-    
-
-
+  
     // Charger plus de posts
     $('#load_more').click(function() {
         nextPage++; // Incrémenter nextPage avant l'exécution de la fonction
@@ -56,7 +55,7 @@
     });
 })(jQuery);
 
-// Select2 couleurs
+// Select2 couleurs (filtres photos de la page d'accueil)
 window.addEventListener('load', () => {
     $('select').select2();
 });

@@ -20,12 +20,11 @@
 /* Ajustez la position du texte si nécessaire */
 .fancybox-button--arrow_right:after,
 .fancybox-button--arrow_left:after {
-
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   color: #ffffff; /* Couleur du texte */
-  font-family: "space_monoregular"; /* Si vous utilisez une police personnalisée */
+  font-family: "space_monoregular"; 
   font-size: 14px;
 }
 
@@ -39,7 +38,7 @@
   right: -100px; /* Ajustez la taille pour décaler le texte à droite de la flèche de gauche */
 }
 
-@media (max-width: 765px) { /* Ajustez la valeur pour le seuil que vous voulez */
+@media (max-width: 765px) { 
   .fancybox-button--arrow_right:after {
     content: "\2192";
     left: 10px; /* Ajustez la taille pour décaler la flèche de droite */
