@@ -815,6 +815,11 @@ body {
   color: #fff !important;
 }
 
+.select2-container--default .select2-results__option:first-child {
+  background-color: #FFD6D6 !important;
+  color: #000 !important;
+}
+
 .fancybox-custom-layout .fancybox-bg {
   background: rgba(0, 0, 0, 0.8);
 }
